@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Gitee自动部署</title>
+    <link href="/Camel_Blog/2022/07/16/Gitee%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/"/>
+    <url>/Camel_Blog/2022/07/16/Gitee%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</url>
+    
+    <content type="html"><![CDATA[<p>众所周知 Gitee自动部署功能是Gitee Pages Pro的功能。</p><span id="more"></span><p>所以就有了<a href="https://github.com/marketplace/actions/gitee-pages-action#gitee-pages-action">Gitee Pages Action</a>这个项目。</p><p>按照说明一步步配就行，配置示例已经写的非常清晰。</p><p>遇到问题再来记录吧。</p><p>(所以我这只是水一篇博客而已</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>gitee</tag>
+      
+      <tag>github</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>hexo配置</title>
     <link href="/Camel_Blog/2022/07/16/hexo%E9%85%8D%E7%BD%AE/"/>
     <url>/Camel_Blog/2022/07/16/hexo%E9%85%8D%E7%BD%AE/</url>
@@ -14,7 +35,7 @@
     
     <tags>
       
-      <tag>Blog</tag>
+      <tag>blog</tag>
       
       <tag>hexo</tag>
       
@@ -138,7 +159,7 @@
     
     <tags>
       
-      <tag>CMake</tag>
+      <tag>cmake</tag>
       
     </tags>
     
@@ -319,11 +340,11 @@
     
     <tags>
       
+      <tag>blog</tag>
+      
       <tag>hexo</tag>
       
       <tag>fluid</tag>
-      
-      <tag>blog</tag>
       
     </tags>
     
@@ -342,7 +363,7 @@
     
     <tags>
       
-      <tag>C</tag>
+      <tag>c</tag>
       
     </tags>
     
