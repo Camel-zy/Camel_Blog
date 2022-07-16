@@ -16,16 +16,18 @@
   <meta name="author" content="Camel">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Just a simple blog">
+    <meta name="description" content="记录以下hexo相关的基础配置。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo配置">
 <meta property="og:url" content="https://camel-zy.github.io/Camel_Blog/2022/07/16/hexo%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Camel&#39;s Blog">
-<meta property="og:description" content="Just a simple blog">
+<meta property="og:description" content="记录以下hexo相关的基础配置。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-07-16T11:12:28.000Z">
-<meta property="article:modified_time" content="2022-07-16T11:12:28.332Z">
+<meta property="article:modified_time" content="2022-07-16T14:24:38.344Z">
 <meta property="article:author" content="Camel">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -208,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      519 字
     </span>
   
 
@@ -217,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      3 分钟
     </span>
   
 
@@ -263,12 +265,39 @@
               </p>
             
             <div class="markdown-body">
-              
+              <p>记录以下hexo相关的基础配置。</p>
+<span id="more"></span>
+
+<p>_config.yml文件配置详细内容可以看<a target="_blank" rel="noopener" href="https://hexo.io/docs/configuration">官网</a></p>
+<p>以下仅简单记录下我遇到的问题</p>
+<h1 id="生成时包含其他文件"><a href="#生成时包含其他文件" class="headerlink" title="生成时包含其他文件"></a>生成时包含其他文件</h1><p>希望hexo在生成时将readme.md workflows之类的文件加上一起部署到仓库，所以就有了这个需求。</p>
+<p>首先在_config.yml文件的<code>include: </code>中加上所需要包含的文件(根目录为source/)，此处支持<a target="_blank" rel="noopener" href="https://github.com/micromatch/micromatch#extended-globbing">通配符</a></p>
+<p>例如：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">include:</span> <br>  - <span class="hljs-string">&quot;.github/workflows/*&quot;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>然后如果不希望文件在生成时被自动转换的话，可以在<code>skip_render: </code>中加上路径，此处支持<a target="_blank" rel="noopener" href="https://github.com/micromatch/micromatch#extended-globbing">通配符</a></p>
+<p>此处添加的文件将会被直接复制到生成后的文件夹(public)中。例如：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">skip_render:</span> <br>  - <span class="hljs-string">&quot;.github/workflows/*&quot;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>然鹅在配完上述内容后，<code>hexo generate</code>生成的<code>public</code>文件夹中确实有了文件，但是使用<code>hexo deploy</code>时我放的<code>.github</code>文件夹又消失了。</p>
+<p>所以后来又去看了下<code>hexo-deploy-git</code>的<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git">配置说明</a></p>
+<p>如果需要上传隐藏文件的话 需要在<code>_config.yml</code>中的<code>deploy</code>部分添加<code>ignore_hidden: false</code>配置</p>
+<p>然后就搞定了</p>
+
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/Camel_Blog/tags/Blog/">Blog</a>
+                    
+                      <a class="hover-with-bg" href="/Camel_Blog/tags/hexo/">hexo</a>
+                    
+                  </div>
                 
               </div>
               
