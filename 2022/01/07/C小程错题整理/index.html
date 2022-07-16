@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+<html lang="zh" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/Camel_Blog/img/favicon.png">
+  <link rel="icon" href="/Camel_Blog/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Camel">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="C小程的错题整理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C小程错题整理">
+<meta property="og:url" content="https://camel-zy.github.io/Camel_Blog/2022/01/07/C%E5%B0%8F%E7%A8%8B%E9%94%99%E9%A2%98%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="Camel&#39;s Blog">
+<meta property="og:description" content="C小程的错题整理">
+<meta property="og:locale">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/01/07/C%E5%B0%8F%E7%A8%8B%E9%94%99%E9%A2%98%E6%95%B4%E7%90%86/operate.jpeg">
+<meta property="article:published_time" content="2022-01-07T05:24:33.000Z">
+<meta property="article:modified_time" content="2022-04-23T15:23:24.938Z">
+<meta property="article:author" content="Camel">
+<meta property="article:tag" content="C">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://camel-zy.github.io/Camel_Blog/2022/01/07/C%E5%B0%8F%E7%A8%8B%E9%94%99%E9%A2%98%E6%95%B4%E7%90%86/operate.jpeg">
+  
+  
+  <title>C小程错题整理 - Camel&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/Camel_Blog/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"camel-zy.github.io","root":"/Camel_Blog/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"05ef824f06a797263b288fb0a8a025e2","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Camel_Blog/local-search.xml"};
+  </script>
+  <script  src="/Camel_Blog/js/utils.js" ></script>
+  <script  src="/Camel_Blog/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/Camel_Blog/">
+      <strong>Camel&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/Camel_Blog/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="C小程错题整理">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-07 13:24" pubdate>
+        January 7, 2022 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      11k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      61 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C小程错题整理</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：April 23, 2022 pm
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>C小程的错题整理</p>
+<span id="more"></span>
+
+<h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><ul>
+<li><p>C程序中定义的变量，代表内存中的一个存储单元。  True</p>
+</li>
+<li><p>执行以下程序段，<code>sum</code>的值是55。 False</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">int</span> i, sum;<br><span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++)&#123;<br>    sum = sum + i;<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+<li><p>C语言中的所有语句都必须以分号结束。   True</p>
+</li>
+<li><p>若变量已正确定义，执行以下<code>while</code>语句将陷入死循环。 False</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">i = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">10</span>) ;<br>    i++;<br></code></pre></div></td></tr></table></figure></li>
+<li><p>以下程序段的功能是输出1～100之间每个整数的各位数字之和。  False(死循环)</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">for</span>(num = <span class="hljs-number">1</span>; num &lt;= <span class="hljs-number">100</span>; num++)&#123; <br>    s = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">do</span>&#123;<br>        s = s + num % <span class="hljs-number">10</span>;<br>        num = num / <span class="hljs-number">10</span>;<br>    &#125;<span class="hljs-keyword">while</span>(num != <span class="hljs-number">0</span>);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, s); <br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+<li><p><code>08</code>是正确的整型常量。    False</p>
+</li>
+<li><p>表达式<code>~(~2&lt;&lt;1)</code>的值是5。    True</p>
+</li>
+<li><p>表达式<code>(z=0, (x=2)||(z=1),z)</code>的值是1。  False</p>
+</li>
+<li><p>运算符<code>“+”</code>不能作为单目运算符。   False</p>
+</li>
+<li><p>自动变量如果没有赋值，其值被自动赋为0。 False   （auto != statics)</p>
+</li>
+<li><p>为了检查以下省略<code>else</code>的<code>if</code>语句的分支是否正确，至少需要设计3组测试用例，即<code>grade</code>的取值至少有三组（小于、大于、等于60）。   </p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">if</span>(grade &lt; <span class="hljs-number">60</span>)&#123;    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Fail\n&quot;</span>); <br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>  True    (需检查边界值)</p>
+</li>
+<li><p>C语言中，大小写字母<code>&#39;A&#39;，&#39;B&#39;，&#39;C&#39;，…，&#39;Z&#39; ，&#39;a&#39;，&#39;b&#39;，&#39;c&#39;，…，&#39;z&#39;</code>的ASCII码按升序连续排列。</p>
+<p>  False   (连续?)</p>
+</li>
+<li><p>设变量已正确定义，执行以下程序段，顺序输入三个字符<code>&#39;Q&#39;</code>，则输出Q。 </p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">ch = getchar(); <br><span class="hljs-built_in">putchar</span>(ch); <br></code></pre></div></td></tr></table></figure>
+<p>  False   (三个字符<code>&#39;Q&#39;</code>)</p>
+</li>
+<li><p>一维数组定义的一般形式如下：</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">类型名 数组名[数组长度]；<br></code></pre></div></td></tr></table></figure>
+<p>  数组元素引用的一般形式如下：</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">数组名[下标]<br></code></pre></div></td></tr></table></figure>
+<p>  在引用数组元素时，下标的合理取值范围是[0，数组长度-1]，下标不能越界。</p>
+<p>  True</p>
+</li>
+<li><p>二维数组定义的一般形式如下，其中的类型名指定数组名的类型。</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">类型名 数组名[行长度][列长度]；<br></code></pre></div></td></tr></table></figure>
+<p>  False   (类型名指定数组中每个元素的类型)</p>
+</li>
+<li><p>二维数组定义的一般形式如下，其中的行长度和列长度都是整型常量表达式。</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">类型名 数组名[行长度] [列长度]；<br></code></pre></div></td></tr></table></figure>
+<p>  True (允许空格、换行)</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>引用二维数组的元素要指定两个下标，即行下标和列下标，一般形式如下。</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">数组名[列下标][行下标]<br></code></pre></div></td></tr></table></figure>
+<p>  False</p>
+</li>
+<li><p>假设结构指针p已定义并正确赋值，其指向的结构变量有一个成员是int型的num，则语句<code>*p.num = 100; </code>是正确的。   False(优先级)</p>
+</li>
+<li><p>表达式 (z=0, (x=2)||(z=1),z) 的值是1。 False(短路)</p>
+</li>
+<li><p>运行包含以下代码段的程序将可能进入死循环。</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>；<br><span class="hljs-keyword">while</span>(i&gt;<span class="hljs-number">0</span>)&#123; i++; <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,i); &#125;<br></code></pre></div></td></tr></table></figure>
+<p>  False(溢出)</p>
+</li>
+</ul>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><ul>
+<li><p>(多)以下程序段（ ）的功能是：输入一批整数，用负数作为输入的结束标志，统计其中大于<code>85</code>的数据个数。   AD</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">A.<br>    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>, score;<br>    <span class="hljs-built_in">scanf</span> (<span class="hljs-string">&quot;%d&quot;</span>, &amp;score);<br>    <span class="hljs-keyword">while</span>(score &gt;= <span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-keyword">if</span>(score &gt; <span class="hljs-number">85</span>)&#123;<br>            count++;<br>        &#125;<br>        <span class="hljs-built_in">scanf</span> (<span class="hljs-string">&quot;%d&quot;</span>, &amp;score);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, count);<br>B.<br>    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>, score;<br>    <span class="hljs-built_in">scanf</span> (<span class="hljs-string">&quot;%d&quot;</span>, &amp;score);<br>    <span class="hljs-keyword">while</span>(score &gt;= <span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-built_in">scanf</span> (<span class="hljs-string">&quot;%d&quot;</span>, &amp;score);<br>        <span class="hljs-keyword">if</span>(score &gt; <span class="hljs-number">85</span>)&#123;<br>            count++;<br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, count);<br>C.<br>    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>, score;<br>    <span class="hljs-keyword">while</span>(score &gt;= <span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-built_in">scanf</span> (<span class="hljs-string">&quot;%d&quot;</span>, &amp;score);<br>        <span class="hljs-keyword">if</span>(score &gt; <span class="hljs-number">85</span>)&#123;<br>            count++;<br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, count);<br>D.<br>    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>, score;<br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)&#123;<br>        <span class="hljs-built_in">scanf</span> (<span class="hljs-string">&quot;%d&quot;</span>, &amp;score);<br>        <span class="hljs-keyword">if</span>(score &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">if</span>(score &gt; <span class="hljs-number">85</span>)&#123;<br>            count++;<br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, count);<br></code></pre></div></td></tr></table></figure></li>
+<li><p>下面的程序段输出是（ ）。   D</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">int</span> k=<span class="hljs-number">11</span>;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;k=%d,k=%o,k=%x\n&quot;</span>,k,k,k);<br><br>A.k=<span class="hljs-number">11</span>,k=<span class="hljs-number">12</span>,k=<span class="hljs-number">11</span><br>B.k=<span class="hljs-number">11</span>,k=<span class="hljs-number">13</span>,k=<span class="hljs-number">13</span><br>C.k=<span class="hljs-number">11</span>,k=<span class="hljs-number">013</span>;k=<span class="hljs-number">0xb</span><br>D.k=<span class="hljs-number">11</span>,k=<span class="hljs-number">13</span>,k=b<br></code></pre></div></td></tr></table></figure></li>
+<li><p>下面的程序段输出是（ ）。   B</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">short</span> <span class="hljs-keyword">int</span> a;<br><span class="hljs-keyword">int</span> b = <span class="hljs-number">65536</span>;<br>a = b;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, a);<br><br>A<span class="hljs-number">.65536</span><br>B<span class="hljs-number">.0</span><br>C.<span class="hljs-number">-1</span><br>D<span class="hljs-number">.1</span><br></code></pre></div></td></tr></table></figure></li>
+<li><p>阅读以下程序段，如果从键盘上输入<code>1234567&lt;回车&gt;</code>，则程序的运行结果是（ ）。    D</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">int</span> i,j;<br><span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%3d%2d&quot;</span>,&amp;i,&amp;j);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;i = %d, j = %d\n&quot;</span>,i,j);<br><br>A.i = <span class="hljs-number">123</span>, j = <span class="hljs-number">4567</span><br>B.i = <span class="hljs-number">1234</span>, j = <span class="hljs-number">567</span><br>C.i = <span class="hljs-number">1</span>, j = <span class="hljs-number">2</span><br>D.i = <span class="hljs-number">123</span>, j = <span class="hljs-number">45</span><br></code></pre></div></td></tr></table></figure></li>
+<li><p>阅读以下程序段，如果从键盘上输入<code>abc&lt;回车&gt;</code>，则程序的运行结果是（ ）。A</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">char</span> ch;<br><span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%3c&quot;</span>,&amp;ch);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c&quot;</span>,ch);<br><br>A.a<br>B.b<br>C.c<br>D.语法出错<br></code></pre></div></td></tr></table></figure></li>
+<li><p>已知字符<code>&#39;A&#39;</code>的ASCII码是<code>65</code>，分别对应八进制数<code>101</code>和十六进制数<code>41</code>，以下（ ）不能正确表示字符’A’。 D</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">A<span class="hljs-number">.&#x27;</span>A<span class="hljs-number">&#x27;</span><br>B<span class="hljs-number">.&#x27;</span>\<span class="hljs-number">101&#x27;</span><br>C<span class="hljs-number">.&#x27;</span>\x41<span class="hljs-number">&#x27;</span><br>D<span class="hljs-number">.&#x27;</span>\<span class="hljs-number">0x41&#x27;</span><br></code></pre></div></td></tr></table></figure></li>
+<li><p>设以下变量均为int类型，表达式的值不为<code>9</code>的是（）。  C</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">A.(x = y = <span class="hljs-number">8</span>, x+y, x+<span class="hljs-number">1</span>)<br>B.(x = y = <span class="hljs-number">8</span>, x+y, y+<span class="hljs-number">1</span>)<br>C.(x = <span class="hljs-number">8</span>, x+<span class="hljs-number">1</span>, y = <span class="hljs-number">8</span>, x+y)<br>D.(y = <span class="hljs-number">8</span>, y+<span class="hljs-number">1</span>, x = y, x+<span class="hljs-number">1</span>)<br></code></pre></div></td></tr></table></figure></li>
+<li><p>运算符（ ）的优先级最高。   A</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">A.[ ]<br>B.+=<br>C.? :<br>D.++<br></code></pre></div></td></tr></table></figure></li>
+<li><p>执行下面程序中的输出语句后，输出结果是（ ）。   B</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">int</span> a;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,(a=<span class="hljs-number">3</span>*<span class="hljs-number">5</span>,a*<span class="hljs-number">4</span>,a+<span class="hljs-number">5</span>));<br><br>A<span class="hljs-number">.65</span><br>B<span class="hljs-number">.20</span><br>C<span class="hljs-number">.15</span><br>D<span class="hljs-number">.10</span><br></code></pre></div></td></tr></table></figure></li>
+<li><p>以下关于函数叙述中，错误的是（ ）。 B   (不定参函数，隐式转换)</p>
+<p>  A.函数未被调用时，系统将不为形参分配内存单元</p>
+<p>  B.实参与形参的个数必须相等，且实参与形参的类型必须对应一致</p>
+<p>  C.当形参是变量时，实参可以是变量、常量或表达式</p>
+<p>  D.如函数调用时，实参与形参都为变量，则这两个变量不可能占用同一内存空间</p>
+</li>
+<li><p>(多)对于以下两个程序段，下列叙述正确的是（ ）。   ACF</p>
+<p>  A.在程序段1和程序段2中，语句<code>y = x + 1;</code>的执行条件皆为满足<code>x&lt;1</code>。</p>
+<p>  B.在程序段1和程序段2中，语句<code>y = x + 1;</code>的执行条件皆为满足<code>x&lt;2</code>。</p>
+<p>  C.在程序段1中，语句<code>y = x + 2;</code>的执行条件是满足<code>x&gt;=2</code>。</p>
+<p>  D.在程序段1中，语句<code>y = x + 2;</code>的执行条件是满足<code>x&gt;=1</code>且<code>x&lt;2</code>。</p>
+<p>  E.在程序段2中，语句<code>y = x + 2;</code>的执行条件是满足<code>x&gt;=2</code>。</p>
+<p>  F.在程序段2中，语句<code>y = x + 2;</code>的执行条件是满足<code>x&gt;=1</code>且<code>x&lt;2</code>。</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">/ * 程序段<span class="hljs-number">1</span> */<br><span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">2</span>)&#123;<br>    <span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">1</span>)&#123;<br>        y = x + <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>    y = x + <span class="hljs-number">2</span>;<br>&#125;<br><br>/ * 程序段<span class="hljs-number">2</span> */<br><span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">2</span>)&#123;<br>    <span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">1</span>)&#123;<br>        y = x + <span class="hljs-number">1</span>;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        y = x + <span class="hljs-number">2</span>;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+<li><p>(多)设变量已正确定义，以下（）是合法的<code>switch</code>语句。    ACD</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">A.<br><span class="hljs-keyword">switch</span>(op)&#123;<br>    <span class="hljs-keyword">default</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Error\n&quot;</span>); <span class="hljs-keyword">break</span>;<br>&#125;<br><br>B.<br><span class="hljs-keyword">switch</span>(op)&#123;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;*&#x27;</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, value1 * value2); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;+&#x27;</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, value1 + value2); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;-&#x27;</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, value1 - value2); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;*&#x27;</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, value1 * value2); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Error\n&quot;</span>); <span class="hljs-keyword">break</span>;<br>&#125;<br><br>C.<br><span class="hljs-keyword">switch</span>(<span class="hljs-string">&#x27;/&#x27;</span>)&#123;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;*&#x27;</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, value1 * value2); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;-&#x27;</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, value1 - value2); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;+&#x27;</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, value1 + value2); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Error\n&quot;</span>); <span class="hljs-keyword">break</span>;<br>&#125;<br><br>D.<br><span class="hljs-keyword">switch</span>(op+<span class="hljs-number">1</span>)&#123;<br>    <span class="hljs-keyword">default</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Error\n&quot;</span>); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;*&#x27;</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, value1 * value2); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;+&#x27;</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, value1 + value2); <span class="hljs-keyword">break</span>;<br>&#125;<br><br>E.<br><span class="hljs-keyword">switch</span>(op)&#123;<br>    <span class="hljs-keyword">case</span> op == <span class="hljs-string">&#x27;+&#x27;</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, value1 + value2); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Error\n&quot;</span>); <span class="hljs-keyword">break</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+<li><p>(多)设变量已正确定义，以下（）是合法的C语句。     AC</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">A.<br><span class="hljs-keyword">if</span> ( n &lt;= <span class="hljs-number">10</span> );<br><br>B.<br><span class="hljs-keyword">switch</span> ( k ) &#123;<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;one&quot;</span>); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;two&quot;</span>); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;one&quot;</span>); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;zero&quot;</span>); <span class="hljs-keyword">break</span>;<br>&#125;<br><br>C.<br><span class="hljs-keyword">switch</span> ( k%<span class="hljs-number">2</span> ) &#123;<br>    <span class="hljs-keyword">default</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;zero&quot;</span>); <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;one&quot;</span>);<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>+<span class="hljs-number">1</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;two&quot;</span>);<br>&#125;<br><br>D.<br>n = <span class="hljs-number">10</span>;<br><span class="hljs-keyword">switch</span> ( k ) &#123;<br>    <span class="hljs-keyword">case</span> n%<span class="hljs-number">3</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;one&quot;</span>);<br>    <span class="hljs-keyword">case</span> n%<span class="hljs-number">4</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;two&quot;</span>);<br>    <span class="hljs-keyword">default</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;zero&quot;</span>);<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+<li><p>(多)选项（ ）与以下字符数组定义等价。 ABD</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> s[<span class="hljs-number">6</span>] = &#123;<span class="hljs-string">&#x27;H&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;p&#x27;</span>, <span class="hljs-string">&#x27;p&#x27;</span>, <span class="hljs-string">&#x27;y&#x27;</span>, <span class="hljs-string">&#x27;\0&#x27;</span>&#125;;<br><br>A.<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> s[<span class="hljs-number">6</span>] = &#123;<span class="hljs-string">&#x27;H&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;p&#x27;</span>, <span class="hljs-string">&#x27;p&#x27;</span>, <span class="hljs-string">&#x27;y&#x27;</span>&#125;;<br>B.<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> s[<span class="hljs-number">6</span>] =<span class="hljs-string">&quot;Happy&quot;</span>;<br>C.<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> s[<span class="hljs-number">6</span>] =&#123;<span class="hljs-string">&quot;Happy&quot;</span>&#125;;<br>D.<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> s[<span class="hljs-number">6</span>] = &#123;<span class="hljs-string">&#x27;H&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;p&#x27;</span>, <span class="hljs-string">&#x27;p&#x27;</span>, <span class="hljs-string">&#x27;y&#x27;</span>, <span class="hljs-number">0</span>&#125;;<br></code></pre></div></td></tr></table></figure>
+<p>  以下能正确定义数组并正确赋初值的语句是（）。    D C中改为<code>int c[][2]=&#123;&#123;1,2&#125;,&#123;3,4&#125;&#125;</code>则可</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">A.<span class="hljs-keyword">int</span> N=<span class="hljs-number">5</span>, b[N][N];<br>B.<span class="hljs-keyword">int</span> a[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>]=&#123;&#123;<span class="hljs-number">1</span>&#125;, &#123;<span class="hljs-number">3</span>&#125;&#125;;<br>C.<span class="hljs-keyword">int</span> c[<span class="hljs-number">2</span>][ ]=&#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>&#125;, &#123;<span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;&#125;;<br>D.<span class="hljs-keyword">int</span> d[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>]=&#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>&#125;, &#123;<span class="hljs-number">34</span>&#125;&#125;;<br></code></pre></div></td></tr></table></figure></li>
+<li><p>以下选项中，对基本类型相同的指针变量不能进行运算的运算符是 ( )。  A 指针相加无意义 相减为两指针相隔元素数</p>
+<p>  A.+</p>
+<p>  B.-</p>
+<p>  C.=</p>
+<p>  D.==</p>
+</li>
+<li><p>对于以下程序段，则叙述正确的是（ ）。 D</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">char</span> s[ ]=<span class="hljs-string">&quot;china&quot;</span>; <br><span class="hljs-keyword">char</span> *p; <br>p = s;<br></code></pre></div></td></tr></table></figure>
+<p>  A.<code>s</code>和<code>p</code>完全相同</p>
+<p>  B.数组<code>s</code>中的内容和指针变量<code>p</code>中的内容相等</p>
+<p>  C.数组<code>s</code>的长度和p所指向的字符串长度相等</p>
+<p>  D.<code>*p</code>与<code>s[0]</code>相等</p>
+</li>
+<li><p>对于以下定义，错误的<code>scanf</code>函数调用语句是（）。 A</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">pupil</span>&#123;</span> <br>    <span class="hljs-keyword">char</span> name[<span class="hljs-number">20</span>];<br>    <span class="hljs-keyword">int</span> age;<br>    <span class="hljs-keyword">int</span> sex;<br>&#125;pup[<span class="hljs-number">5</span>];<br><br>A.<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, &amp;pup[<span class="hljs-number">0</span>].name);<br><br>B.<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;pup[<span class="hljs-number">1</span>].age);<br><br>C.<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;pup[<span class="hljs-number">2</span>].sex);<br><br>D.<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, pup[<span class="hljs-number">4</span>].name);<br></code></pre></div></td></tr></table></figure></li>
+<li><p>以下程序的输出结果是（ ）。   C</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">stu</span>&#123;</span><br>    <span class="hljs-keyword">int</span> x; <br>    <span class="hljs-keyword">int</span> *y;<br>&#125; *p;<br><span class="hljs-keyword">int</span> dt[<span class="hljs-number">4</span>] = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>&#125;;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">stu</span> <span class="hljs-title">a</span>[4] =</span> &#123;<span class="hljs-number">50</span>, &amp;dt[<span class="hljs-number">0</span>], <span class="hljs-number">60</span>, &amp;dt[<span class="hljs-number">1</span>], <span class="hljs-number">70</span>, &amp;dt[<span class="hljs-number">2</span>], <span class="hljs-number">80</span>, &amp;dt[<span class="hljs-number">3</span>]&#125;;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">( )</span></span><br><span class="hljs-function"></span>&#123; <br>    p=a;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d,&quot;</span>, ++p-&gt;x);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d,&quot;</span>, (++p)-&gt;x);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, ++(*p-&gt;y));<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>  A.10,20,20</p>
+<p>  B.50,60,21</p>
+<p>  C.51,60,21</p>
+<p>  D.60,70,31</p>
+</li>
+<li><p>对于以下结构定义，<code>(*p)-&gt;str++</code>中的++加在（）。 D</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> &#123;</span> <br>    <span class="hljs-keyword">int</span> len; <br>    <span class="hljs-keyword">char</span> *str<br>&#125; *p;<br></code></pre></div></td></tr></table></figure>
+
+<p>  A.指针<code>str</code>上</p>
+<p>  B.指针<code>p</code>上</p>
+<p>  C.<code>str</code>指向的内容上</p>
+<p>  D.语法错误</p>
+</li>
+<li><p>在“文件包含”预处理语句的使用过程中，当#include后面的文件名用双引号括起来时，寻找被包含文件的方式是( )。   B(用&lt;&gt;时选A)</p>
+<p>  A.直接按系统设定的标准方式搜索目录</p>
+<p>  B.先在源程序所在目录搜索，再按系统设定的标准方式搜索</p>
+<p>  C.仅仅搜索源程序所在目录</p>
+<p>  D.仅仅搜索当前目录</p>
+</li>
+<li><p>下面说法中正确的是（）。  A(题目可能存在问题)</p>
+<p>  A.若全局变量仅在单个C文件中访问，则可以将这个变量修改为静态全局变量，以降低模块间的耦合度</p>
+<p>  B.若全局变量仅由单个函数访问，则可以将这个变量改为该函数的静态局部变量，以降低模块间的耦合度</p>
+<p>  C.设计和使用访问动态全局变量、静态全局变量、静态局部变量的函数时，需要考虑变量生命周期问题</p>
+<p>  D.静态全局变量使用过多，可那会导致动态存储区（堆栈）溢出</p>
+<p>  (B选项：仅仅由单个函数访问，不存在模块耦合度问题</p>
+<p>  C选项：动态全局变量，静态全局变量，静态局部变量的生命周期都是整个程序运行期间，跟函数设计没有关系</p>
+<p>  D选项：静态全局变量存储于全局（静态）数据区)</p>
+</li>
+<li><p>若fopen()函数打开文件失败，其返回值是（ ）。  C(成功返回file地址)<br>  A.1     B.-1    C.NULL  D.ERROR</p>
+</li>
+<li><p>若读文件还未读到文件末尾， feof()函数的返回值是（ ）。    B(结束为1)<br>  A.-1    B.0     C.1     D.非0</p>
+</li>
+<li><p>fputc(ch,fp) 把一个字符ch写到fp所指示的磁盘文件中，若写文件失败则函数的返回值为（ ）。    C(成功为ch)<br>  A.0     B.1     C.EOF   D.非0</p>
+</li>
+<li><p>缓冲文件系统的文件缓冲区位于（）。    C<br>  A.磁盘缓冲区中  </p>
+<p>  B.磁盘文件中</p>
+<p>  C.内存数据区中</p>
+<p>  D.程序文件中</p>
+</li>
+<li><p>直接使文件指针重新定位到文件读写的首地址的函数是（） 。   C<br>  A.ftell()   B.fseek()</p>
+<p>  C.rewind()  D.ferror()</p>
+</li>
+</ul>
+<hr>
+<h2 id="填空"><a href="#填空" class="headerlink" title="填空"></a>填空</h2><ul>
+<li><p>若变量已正确定义，执行以下程序段，并回答下列问题。请注意，直接填数字，前后不要加空格等任何其他字符。</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C">i = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">while</span> (i &lt;= <span class="hljs-number">10</span>)<br>    i++;                 <span class="hljs-comment">/* 语句① */</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, i);   <span class="hljs-comment">/* 语句② */</span><br></code></pre></div></td></tr></table></figure>
+<p>  语句①执行了?次</p>
+<p>  语句②执行了?次</p>
+<p>  循环体语句共执行了?次</p>
+<p>  当循环结束时，变量<code>i</code>的值是?</p>
+<p>  10 1 10 11</p>
+</li>
+<li><p>若变量已正确定义，写出以下程序段的运行结果。</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-built_in">scanf</span> (<span class="hljs-string">&quot;%d&quot;</span>, &amp;k);  <br><span class="hljs-keyword">while</span>(k &gt;= <span class="hljs-number">0</span>)&#123;   <br>    <span class="hljs-built_in">scanf</span> (<span class="hljs-string">&quot;%d&quot;</span>, &amp;k); <br>     <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d#&quot;</span>, k);          <br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>  输入<code>1 2 3 0 -1</code>，输出</p>
+<p>  输入<code>1 0 2 3 -1</code>，输出</p>
+<p>  输入<code>1 2 3 -1 9</code>，输出</p>
+<p>  2#3#0#-1#</p>
+<p>  0#2#3#-1#</p>
+<p>  2#3#-1#</p>
+</li>
+<li><p>若变量已正确定义，写出以下程序段的运行结果。</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-built_in">scanf</span> (<span class="hljs-string">&quot;%d&quot;</span>, &amp;m);<br>limit = <span class="hljs-built_in">sqrt</span>(m) + <span class="hljs-number">1</span>;<br><span class="hljs-keyword">for</span>(i = <span class="hljs-number">2</span>; i &lt;= limit; i++)&#123;<br>    <span class="hljs-keyword">if</span>(m % i == <span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;No&quot;</span>);<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Yes&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>  输入<code>9</code>，输出</p>
+<p>  输入<code>4</code>，输出</p>
+<p>  YesNoYes</p>
+<p>  NoYes</p>
+</li>
+<li><p>写出以下程序的运行结果。请注意，直接填数字或者字符，前、后和中间不要加空格。</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> c1 = <span class="hljs-number">0</span>, c2 = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> ch;                      <br>    <span class="hljs-keyword">while</span>((ch = getchar()) != <span class="hljs-string">&#x27;#&#x27;</span>)&#123;<br>        <span class="hljs-keyword">switch</span>(ch)&#123;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;a&#x27;</span>:<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;h&#x27;</span>: c1++;<br>            <span class="hljs-keyword">default</span>: c2++;<br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;c1=%d,c2=%d\n&quot;</span>, c1, c2);   <span class="hljs-comment">/* 中间、前、后都没有空格 */</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>  输入<code>china#</code>，输出（）<br>  c1=2,c2=5</p>
+</li>
+<li><p>写出以下程序段的运行结果。请注意，直接填单词、字符或者两者的组合，前后不要加空格等任何其他字符。</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">double</span> grade; <br><span class="hljs-built_in">scanf</span> (<span class="hljs-string">&quot;%lf&quot;</span>, &amp;grade); <br><span class="hljs-keyword">if</span>(grade &lt; <span class="hljs-number">60</span>); &#123;    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Fail&quot;</span>); <br>&#125;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;?&quot;</span>); <br></code></pre></div></td></tr></table></figure>
+<p>  输入<code>50</code>，输出</p>
+<p>  输入<code>60</code>，输出</p>
+<p>  输入<code>90</code>，输出</p>
+<p>  Fail?</p>
+<p>  Fail?</p>
+<p>  Fail?</p>
+</li>
+<li><p>假设整型数据用两个字节表示，则用二进制表示-127的原码为？反码为？补码为？</p>
+<p>  1000000001111111 1111111110000000 1111111110000001</p>
+</li>
+<li><p>以下程序的运行结果是</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ps</span>&#123;</span><br>    <span class="hljs-keyword">double</span> i;<br>    <span class="hljs-keyword">char</span> arr[<span class="hljs-number">24</span>];<br>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ps</span> <span class="hljs-title">s</span>[3], *<span class="hljs-title">p1</span>, *<span class="hljs-title">p2</span>;</span><br>    p1=s;  <br>    p2=s+<span class="hljs-number">2</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d,%d\n&quot;</span>, p2-p1, <span class="hljs-keyword">sizeof</span>(struct ps)); <span class="hljs-comment">/* 输出数据之间没有空格分隔 */</span><br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>  2,32</p>
+</li>
+<li><p>以下程序的运行结果是</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">st</span>&#123;</span><br><span class="hljs-keyword">char</span> c; <br><span class="hljs-keyword">char</span> s[<span class="hljs-number">80</span>];<br>&#125;;<br><span class="hljs-class"><span class="hljs-keyword">struct</span>  <span class="hljs-title">st</span> <span class="hljs-title">a</span>[4] =</span> &#123;&#123;<span class="hljs-string">&#x27;1&#x27;</span>,<span class="hljs-string">&quot;123&quot;</span>&#125;, &#123;<span class="hljs-string">&#x27;2&#x27;</span>,<span class="hljs-string">&quot;321&quot;</span>&#125;, &#123;<span class="hljs-string">&#x27;3&#x27;</span>,<span class="hljs-string">&quot;123&quot;</span>&#125;, &#123;<span class="hljs-string">&#x27;4&#x27;</span>,<span class="hljs-string">&quot;321&quot;</span>&#125;&#125;;<br><span class="hljs-function"><span class="hljs-keyword">char</span> * <span class="hljs-title">f</span><span class="hljs-params">(struct st *t)</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">( )</span></span><br><span class="hljs-function"></span>&#123;   <span class="hljs-keyword">int</span> k;<br>    <span class="hljs-keyword">for</span>(k = <span class="hljs-number">0</span>; k &lt; <span class="hljs-number">4</span>; k++)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>, f(a+k));<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">char</span> * <span class="hljs-title">f</span><span class="hljs-params">(struct st *t)</span></span><br><span class="hljs-function"></span>&#123;   <br>    <span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(t-&gt;s[k] != <span class="hljs-string">&#x27;\0&#x27;</span>)&#123;<br>        <span class="hljs-keyword">if</span>( t-&gt;s[k] == t-&gt;c)&#123;<br>        <span class="hljs-keyword">return</span> t-&gt;s+k;<br>        &#125;<br>        k++;<br>    &#125;<br>    <span class="hljs-keyword">return</span> t-&gt;s;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>  123213321</p>
+</li>
+<li><p>运行以下程序段，第1行输出?，第2行输出?</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> &#123;</span><br>    <span class="hljs-keyword">int</span> a; <span class="hljs-keyword">int</span> *b;<br>&#125; s[<span class="hljs-number">4</span>], *p;<br><span class="hljs-keyword">int</span> i, n = <span class="hljs-number">1</span>;    <br><span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++)&#123;<br>    s[i].a = n;<br>    s[i].b = &amp;s[i].a;<br>    n = n + <span class="hljs-number">2</span>;<br>&#125;<br>p = &amp;s[<span class="hljs-number">0</span>];<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ++*p-&gt;b);<br>p++;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d,%d\n&quot;</span>, (++p)-&gt;a, (p++)-&gt;a);  <span class="hljs-comment">/* 输出数据之间没有空格分隔 */</span><br></code></pre></div></td></tr></table></figure>
+<p>  2</p>
+<p>  7,3</p>
+<p>  (<code>printf</code>从右向左计算)</p>
+</li>
+<li><p>```C<br>  printf(“%.3lf\n”, 2.0/3);</p>
+  <figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp">    输出：<br>    <span class="hljs-number">0.667</span>   (会四舍五入)<br><br>- 阅读以下程序并回答问题。<br>    ```C<br>    <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span><br><span class="hljs-function">    </span>&#123;   <br>        <span class="hljs-keyword">int</span> s = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(n--)&#123;<br>            s += n;<br>        &#125;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d,%d\n&quot;</span>, n, s);  <span class="hljs-comment">/* 中间没有空格 */</span><br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function">    </span>&#123;    <br>        <span class="hljs-built_in">f2</span>(<span class="hljs-number">4</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br></code></pre></div></td></tr></table></figure>
+<p>  输出：<br>  -1,6(not 4,6)</p>
+</li>
+<li><p>阅读以下程序并回答问题。</p>
+  <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f2</span><span class="hljs-params">()</span> </span><br><span class="hljs-function"></span>&#123;   <br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>, s;<br>    s = s + k;<br>    k++;<br>    <span class="hljs-keyword">return</span> s;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;   <br>    <span class="hljs-keyword">int</span> i;<br>    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">3</span>; i++)&#123;<br>        f2();<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, f2());<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>  输出：<br>  10(not 4)   //静态变量不会重新赋初值</p>
+</li>
+<li><p>根据数据存储的编码形式，C语言中处理的数据文件通常为?文件和?文件两种。</p>
+</li>
+<li><p>C语言中，在成功打开一个文件后，可以使用?来获取文件缓冲区的FILE结构信息。</p>
+</li>
+<li><p>fgets(s,n,fp);语句用来从fp所指示的文本文件中读取字符串s，该语句最多读取?个字符。</p>
+<p>  n-1</p>
+</li>
+</ul>
+<h1 id="零零散散"><a href="#零零散散" class="headerlink" title="零零散散"></a>零零散散</h1><ul>
+<li><p>逗号表达式 从左到右计算，返回值为最后一个表达式的值</p>
+</li>
+<li><p>取反后需转为原码 如对10取反为-11</p>
+</li>
+<li><p>strcpy() 后面字符串复制到前面字符串 覆盖</p>
+</li>
+<li><p>文件打开参数 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/kangjianwei101/p/5220021.html">https://www.cnblogs.com/kangjianwei101/p/5220021.html</a></p>
+</li>
+<li><p>实数存储方式 符号 阶码(移码表示的乘幂指数) 尾数   没有基数(乘幂的底数)</p>
+</li>
+<li><p>二维指针 <code>*(*(p+1)+1) </code> 表示<code>p[1][1]</code></p>
+</li>
+<li><p>指针数组和数组指针 <code>int *p1[5]</code> 每个元素都是指针 <code>int (*p2)[5]</code> 一个指向数组的指针</p>
+</li>
+<li><p>sizeof()表达式的值在编译时确定。编译器不计算其中表达式的值，仅将其替换为对应类型。</p>
+</li>
+<li><p>scanf遇到空白字符截止，为输入一行可使用 scanf(“[^\n]”,str) 或gets()。</p>
+<p>  注意：scanf(“%s”, s)输入 “How are you?” 遇到空格截断，只得到How。</p>
+</li>
+<li><p>位运算是根据内存中的二进制位进行运算的</p>
+</li>
+<li><p>true false等不是保留关键字</p>
+</li>
+<li><p>左移运算符&lt;&lt;用来把操作数的各个二进制位全部左移若干位，高位丢弃，低位补0。</p>
+</li>
+<li><p>右移运算符&gt;&gt;用来把操作数的各个二进制位全部右移若干位，低位丢弃，高位补 0 或 1。如果数据的最高位是 0，那么就补 0；如果最高位是 1，那么就补 1。</p>
+</li>
+</ul>
+<h1 id="补个优先级表格"><a href="#补个优先级表格" class="headerlink" title="补个优先级表格"></a>补个优先级表格</h1><p><img src="operate.jpeg" srcset="/Camel_Blog/img/loading.gif" lazyload alt="优先级表格"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/Camel_Blog/tags/C/">C</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Camel_Blog/2022/01/12/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">博客搭建</span>
+                        <span class="visible-mobile">Vorheriger</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">Stichwort</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/Camel_Blog/js/events.js" ></script>
+<script  src="/Camel_Blog/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/Camel_Blog/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/Camel_Blog/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?05ef824f06a797263b288fb0a8a025e2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/Camel_Blog/js/boot.js" ></script>
+
+
+</body>
+</html>

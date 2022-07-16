@@ -1,0 +1,761 @@
+
+
+<!DOCTYPE html>
+<html lang="zh" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/Camel_Blog/img/favicon.png">
+  <link rel="icon" href="/Camel_Blog/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Camel">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一份C大程的随意笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C大程随性笔记">
+<meta property="og:url" content="https://camel-zy.github.io/Camel_Blog/2022/02/22/C%E5%A4%A7%E7%A8%8B%E9%9A%8F%E6%80%A7%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Camel&#39;s Blog">
+<meta property="og:description" content="一份C大程的随意笔记">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-02-22T14:31:04.000Z">
+<meta property="article:modified_time" content="2022-05-06T14:54:55.370Z">
+<meta property="article:author" content="Camel">
+<meta property="article:tag" content="c">
+<meta property="article:tag" content="note">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>C大程随性笔记 - Camel&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/Camel_Blog/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"camel-zy.github.io","root":"/Camel_Blog/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"05ef824f06a797263b288fb0a8a025e2","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Camel_Blog/local-search.xml"};
+  </script>
+  <script  src="/Camel_Blog/js/utils.js" ></script>
+  <script  src="/Camel_Blog/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/Camel_Blog/">
+      <strong>Camel&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/Camel_Blog/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="C大程随性笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-22 22:31" pubdate>
+        February 22, 2022 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      6.2k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      35 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C大程随性笔记</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：May 6, 2022 pm
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>一份C大程的随意笔记</p>
+<span id="more"></span>
+
+<p>要是有哪里写错了那就写错了吧 反正考完理论考我也不用记这些东西了(</p>
+<h1 id="enum"><a href="#enum" class="headerlink" title="enum"></a>enum</h1><p>关于枚举类型：</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">TypeName</span>&#123;</span>ValueName1,ValueName2,...&#125;;<br></code></pre></div></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">week</span>&#123;</span> Mon = <span class="hljs-number">1</span>, Tues = <span class="hljs-number">2</span>, Wed = <span class="hljs-number">3</span>, Thurs = <span class="hljs-number">4</span>, Fri = <span class="hljs-number">5</span>, Sat = <span class="hljs-number">6</span>, Sun = <span class="hljs-number">7</span> &#125; day;  <span class="hljs-comment">//内部用逗号分隔 最后为空 不是分号</span><br>day = Mon;<br></code></pre></div></td></tr></table></figure>
+<p>对于没有赋值的元素，其值为<strong>前一元素加1</strong> 初值为0</p>
+<p>例如</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Test</span> &#123;</span>x, y = <span class="hljs-number">4</span>, z&#125;;<br>x == <span class="hljs-number">0</span><br>z == <span class="hljs-number">5</span>    <br></code></pre></div></td></tr></table></figure>
+
+<h1 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h1><p>这边关于typedef再多记一点：对于数组的typedef</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">int</span> <span class="hljs-built_in">vector</span>[<span class="hljs-number">10</span>];<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">int</span> matrix[<span class="hljs-number">5</span>][<span class="hljs-number">5</span>];<br></code></pre></div></td></tr></table></figure>
+
+<p>一个挺好的理解办法：去掉typedef就是变量定义。</p>
+<h1 id="联合（共同）体"><a href="#联合（共同）体" class="headerlink" title="联合（共同）体"></a>联合（共同）体</h1><p>结构体分配足够的空间存储其所有成员，而共用体分配空间仅存储最大的成员。</p>
+<p>例如</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">union</span> <span class="hljs-title">S</span> &#123;</span><br>  <span class="hljs-keyword">char</span> a;<br>  <span class="hljs-keyword">int</span> b[<span class="hljs-number">4</span>];<br>  <span class="hljs-keyword">double</span> c;<br>&#125; x;<br><br><span class="hljs-keyword">sizeof</span>(x) == <span class="hljs-number">16</span><br></code></pre></div></td></tr></table></figure>
+
+<p>有一个“字节对齐问题”</p>
+<p>例如</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-class"><span class="hljs-keyword">union</span> <span class="hljs-title">U</span></span><br><span class="hljs-class">&#123;</span><br>    <span class="hljs-keyword">char</span> s[<span class="hljs-number">9</span>];<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-keyword">double</span> d;<br>&#125; x;<br><br><span class="hljs-keyword">sizeof</span>(x) == <span class="hljs-number">16</span><br><br></code></pre></div></td></tr></table></figure>
+
+<p>其中，s占9字节，n占4字节，d占8字节。但9既不能被4(int)整除，也不能被8(double)整除，因此补充字节到16。</p>
+<p>union大小必须满足：1)大小足够容纳最宽的成员；2)大小能被其包含的所有基本数据类型的大小所整除。</p>
+<h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><h2 id="普通指针"><a href="#普通指针" class="headerlink" title="普通指针"></a>普通指针</h2><p>函数形参有地址时，注意不要改变地址，只改变该地址指向的值以实现双向传输。<br>放个错题：</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ArrayCreate</span><span class="hljs-params">(<span class="hljs-keyword">double</span> **<span class="hljs-built_in">array</span>, <span class="hljs-keyword">int</span> size)</span> </span>&#123;<br>    <span class="hljs-built_in">array</span> = (<span class="hljs-keyword">double</span> **)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">double</span> *) * size); <span class="hljs-comment">//wrong</span><br><br>    *<span class="hljs-built_in">array</span> = (<span class="hljs-keyword">double</span> *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">double</span>) * size); <span class="hljs-comment">//right</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>第一种改变会导致该参数的改变无法传出。(这玩意坑了我近两小时)</p>
+<p>静态变量地址可返回使用（返回的指针指向的内存空间没有释放，在主调函数能够继续使用）</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> * <span class="hljs-title">f4</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> d[<span class="hljs-number">10</span>];<br>  <span class="hljs-keyword">return</span> d;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p>如果函数的返回类型是指针，则可以返回0。（NULL == 0）</p>
+<p>使用前记得分配空间。</p>
+<h2 id="字符串指针"><a href="#字符串指针" class="headerlink" title="字符串指针"></a>字符串指针</h2><p>两个字符串直接比较 比较的是首地址</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-keyword">char</span> *str = <span class="hljs-string">&quot;hello&quot;</span>;<br>str[<span class="hljs-number">0</span>] = <span class="hljs-string">&#x27;H&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+<p>这种写法不合法，str指针指向的是常量字符串，不允许修改，会导致<strong>段错误</strong>。</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-keyword">char</span> *color[<span class="hljs-number">5</span>];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, color[i]);<br></code></pre></div></td></tr></table></figure>
+<p>这种写法亦不合法。段错误。</p>
+<p>字符串数组的数组名不可修改 例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-keyword">char</span> color[ ][<span class="hljs-number">7</span>] = &#123;<span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-string">&quot;blue&quot;</span>, <span class="hljs-string">&quot;yellow&quot;</span>, <span class="hljs-string">&quot;green&quot;</span>, “black<span class="hljs-string">&quot;&#125;;</span><br><span class="hljs-string">char * tmp = color[0]; </span><br><span class="hljs-string">color[0] = color[4]; </span><br><span class="hljs-string">color[4] = tmp; </span><br></code></pre></div></td></tr></table></figure>
+
+<p><strong>编译错误！</strong></p>
+<p>字符串处理相关函数(string.h库)</p>
+<table>
+<thead>
+<tr>
+<th align="left">函数名</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">int strcmp(const char *str1, const char *str2)</td>
+<td>如果返回值小于 0，则表示 str1 小于 str2。</td>
+</tr>
+<tr>
+<td align="left">char *strcat(char *dest, const char *src)</td>
+<td>把 <strong>src</strong> 所指向的字符串追加到 <strong>dest</strong> 所指向的字符串的结尾（dest会被修改）。返回一个指向最终的目标字符串 dest 的指针</td>
+</tr>
+<tr>
+<td align="left">char *strcpy(char *dest, const char *src)</td>
+<td>把 <strong>src</strong> 所指向的字符串复制到 <strong>dest</strong>（dest会被修改），返回一个指向最终的目标字符串 dest 的指针。</td>
+</tr>
+</tbody></table>
+<h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h2><p>顺带提一句，C语言不允许函数嵌套定义 即一个函数定义中<strong>不可以</strong>完整地包含另一个函数的定义。  </p>
+<h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>函数返回类型(*指针变量名)(函数形参类型列表);</p>
+<p>函数名代表函数的入口地址(常量)，是一个指针。通过函数指针可以调用函数，它也可以作为函数的参数。</p>
+<p>放个栗子</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> num1,<span class="hljs-keyword">int</span> num2)</span></span>&#123;<br>    <span class="hljs-keyword">return</span> num1 + num2;<br>&#125;<br>​<br>​<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sub</span><span class="hljs-params">(<span class="hljs-keyword">int</span> num1,<span class="hljs-keyword">int</span> num2)</span></span>&#123;<br>    <span class="hljs-keyword">return</span> num1 - num2;<br>&#125;<br>​<br>​<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">calculate</span><span class="hljs-params">(<span class="hljs-keyword">int</span> (*fp)(<span class="hljs-keyword">int</span>,<span class="hljs-keyword">int</span>),<span class="hljs-keyword">int</span> num1,<span class="hljs-keyword">int</span> num2)</span></span>&#123;<br>    <span class="hljs-keyword">return</span> (*fp)(num1,num2);<br>&#125;<br>​<br>​<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;3+5=%d\n&quot;</span>, calculate(add,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>));<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;3-5=%d\n&quot;</span>, calculate(sub,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>));<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h2><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-keyword">int</span> *p[<span class="hljs-number">4</span>];<br><span class="hljs-keyword">int</span> (*p)[<span class="hljs-number">4</span>];<br></code></pre></div></td></tr></table></figure>
+<p>前者为指针数组，p先与<code>[]</code>结合代表其为数组。</p>
+<p>后者为数组指针，p先与<code>*</code>结合代表其为指针，指向的为<code>[4]</code>数组。</p>
+<p>一个小练习：</p>
+<p>变量定义<code>int *(*f[3])();</code>中<code>f</code>是（ ）   D</p>
+<p>A.一组指向返回int的函数的二级指针数组</p>
+<p>B.一个指向一组返回int *的函数数组的指针</p>
+<p>C.一个返回指向一组int *数组的指针的函数</p>
+<p>D.一个返回int *的函数指针的数组</p>
+<p>E.一个指向返回int *数组的函数的指针</p>
+<p>F.一个指向一组返回int的函数指针的数组的指针</p>
+<h2 id="二维数组与指针"><a href="#二维数组与指针" class="headerlink" title="二维数组与指针"></a>二维数组与指针</h2><p>放个栗子</p>
+<p>对于以下程序，能够正确表示二维数组 t 的元素地址的表达式是(C)</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> k, t[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>], *pt[<span class="hljs-number">3</span>];<br>        <br>    <span class="hljs-keyword">for</span> ( k = <span class="hljs-number">0</span>; k &lt; <span class="hljs-number">3</span>; k++) &#123;<br>        pt[k] = t[k];<br>        &#125;<br>                <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br>A. &amp;t[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>]<br>B. *pt[<span class="hljs-number">0</span>]<br>C. *(pt+<span class="hljs-number">1</span>)<br>D. &amp;pt[<span class="hljs-number">2</span>]<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="指针形参实参匹配"><a href="#指针形参实参匹配" class="headerlink" title="指针形参实参匹配"></a>指针形参实参匹配</h2><p>二维数组名不是二级指针,而是一个数组指针。</p>
+<p>即二维数组的每个元素都是一个一维数组。</p>
+<p>放个栗子 感觉这很难说 也很无聊</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c">下列哪些实参(左边)和形参(右边)能够匹配的是（DEFH）。<br>A. <span class="hljs-keyword">double</span> a[<span class="hljs-number">10</span>][<span class="hljs-number">10</span>]	<span class="hljs-keyword">double</span> **b<br>B. <span class="hljs-keyword">double</span> a[<span class="hljs-number">10</span>][<span class="hljs-number">10</span>] <span class="hljs-keyword">double</span> b[][]<br>C. <span class="hljs-keyword">double</span> a[<span class="hljs-number">10</span>][<span class="hljs-number">10</span>] <span class="hljs-keyword">double</span> b[<span class="hljs-number">10</span>][]<br>D. <span class="hljs-keyword">double</span> a[<span class="hljs-number">10</span>][<span class="hljs-number">10</span>] <span class="hljs-keyword">double</span> b[][<span class="hljs-number">10</span>]<br>E. <span class="hljs-keyword">double</span> a[<span class="hljs-number">10</span>][<span class="hljs-number">10</span>] <span class="hljs-keyword">double</span> (*b)[<span class="hljs-number">10</span>]<br>F. <span class="hljs-keyword">double</span> *a[<span class="hljs-number">10</span>] <span class="hljs-keyword">double</span> **b<br>G. <span class="hljs-keyword">double</span> (*a)[<span class="hljs-number">10</span>] <span class="hljs-keyword">double</span> **b<br>H. <span class="hljs-keyword">double</span> **a <span class="hljs-keyword">double</span> *b[]<br>I. <span class="hljs-keyword">double</span> **a <span class="hljs-keyword">double</span> b[][]<br></code></pre></div></td></tr></table></figure>
+
+<p>另外注意有的时候需要对指针强制转换  比如void *很多时候需要转换。</p>
+<h2 id="文件指针"><a href="#文件指针" class="headerlink" title="文件指针"></a>文件指针</h2><blockquote>
+<p><strong>错误</strong>：文件指针指向文件缓冲区中文件数据的存取位置</p>
+</blockquote>
+<blockquote>
+<p>文件指针实际上是指向一个结构体类型的指针，包含有诸如：缓冲区的地址在缓冲区中当前存取的字符的位置、对文件是“读”还是“写”、是否出错、是否已经遇到文件结束标志等信息。</p>
+</blockquote>
+<h3 id="fopen"><a href="#fopen" class="headerlink" title="fopen"></a>fopen</h3><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function">FILE *<span class="hljs-title">fopen</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *filename, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *mode)</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>返回一个 FILE 指针。否则返回 <strong>NULL</strong>。</p>
+<p>文件打开方式参数表：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>只读（文件必须存在）</td>
+</tr>
+<tr>
+<td>w</td>
+<td>只写（若文件不存在则新建）</td>
+</tr>
+<tr>
+<td>a</td>
+<td>追写</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>读写（文件必须存在）</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>读写（若文件不存在则新建）</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>读/追写</td>
+</tr>
+</tbody></table>
+<p>加个b就是相应的二进制文件操作 懒得再赘述。</p>
+<h3 id="feof"><a href="#feof" class="headerlink" title="feof"></a>feof</h3><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">feof</span><span class="hljs-params">(FILE *stream)</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>文件结束：返回非0值；文件未结束：返回0值。</p>
+<h3 id="fputc"><a href="#fputc" class="headerlink" title="fputc"></a>fputc</h3><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fputc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-keyword">char</span>, FILE *stream)</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>如果没有发生错误，则返回被写入的字符。如果发生错误，则返回 EOF。</p>
+<h3 id="rewind"><a href="#rewind" class="headerlink" title="rewind"></a>rewind</h3><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rewind</span><span class="hljs-params">(FILE *stream)</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>移到文件首。</p>
+<h3 id="ftell"><a href="#ftell" class="headerlink" title="ftell"></a>ftell</h3><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> <span class="hljs-title">ftell</span><span class="hljs-params">(FILE *stream)</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>返回位置标识符的当前值。如果发生错误，则返回 -1L。</p>
+<h3 id="fseek"><a href="#fseek" class="headerlink" title="fseek"></a>fseek</h3><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fseek</span><span class="hljs-params">(FILE *stream, <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> offset, <span class="hljs-keyword">int</span> whence)</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li><strong>stream</strong>  – 这是指向 FILE 对象的指针，该 FILE 对象标识了流。</li>
+<li><strong>offset</strong> – 这是相对 whence 的偏移量，以字节为单位。</li>
+<li><strong>whence</strong> – 这是表示开始添加偏移 offset 的位置。它一般指定为下列常量之一：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>常量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SEEK_SET</td>
+<td>文件的开头</td>
+</tr>
+<tr>
+<td>SEEK_CUR</td>
+<td>文件指针的当前位置</td>
+</tr>
+<tr>
+<td>SEEK_END</td>
+<td>文件的末尾</td>
+</tr>
+</tbody></table>
+<h3 id="ferror"><a href="#ferror" class="headerlink" title="ferror"></a>ferror</h3><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">ferror</span><span class="hljs-params">(FILE *stream)</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>如果设置了与流关联的错误标识符，该函数返回一个非零值，否则返回一个零值。</p>
+<h3 id="fread"><a href="#fread" class="headerlink" title="fread"></a>fread</h3><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">size_t</span> <span class="hljs-title">fread</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *ptr, <span class="hljs-keyword">size_t</span> size, <span class="hljs-keyword">size_t</span> nmemb, FILE *stream)</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>成功读取的元素总数会以 size_t 对象返回。</p>
+<p>参数：</p>
+<ul>
+<li><strong>ptr</strong>  – 这是指向带有最小尺寸 <em>size*nmemb</em> 字节的内存块的指针。</li>
+<li><strong>size</strong> – 这是要读取的每个元素的大小，以字节为单位。</li>
+<li><strong>nmemb</strong>  – 这是元素的个数，每个元素的大小为 size 字节。</li>
+<li><strong>stream</strong> – 这是指向 FILE 对象的指针，该 FILE 对象指定了一个输入流。</li>
+</ul>
+<h3 id="fwrite"><a href="#fwrite" class="headerlink" title="fwrite"></a>fwrite</h3><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">size_t</span> <span class="hljs-title">fwrite</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *ptr, <span class="hljs-keyword">size_t</span> size, <span class="hljs-keyword">size_t</span> nmemb, FILE *stream)</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li><strong>ptr</strong>  – 这是指向要被写入的元素数组的指针。</li>
+<li><strong>size</strong>  – 这是要被写入的每个元素的大小，以字节为单位。</li>
+<li><strong>nmemb</strong>  – 这是元素的个数，每个元素的大小为 size 字节。</li>
+<li><strong>stream</strong>  – 这是指向 FILE 对象的指针，该 FILE 对象指定了一个输出流。</li>
+</ul>
+<p>如果成功，该函数返回一个 size_t 对象，表示元素的总数。</p>
+<h1 id="命令行参数"><a href="#命令行参数" class="headerlink" title="命令行参数"></a>命令行参数</h1><h2 id="main"><a href="#main" class="headerlink" title="main"></a>main</h2><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span></span>;<br></code></pre></div></td></tr></table></figure>
+<p>argc为参数数量，argv为参数列表。<br><strong>文件名本身也算一个参数</strong> 所以argv[0]就是文件名</p>
+<h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><p>在单向链表中，头指针中存放的不是头结点的内容，头指针指向头结点。（都是些什么无聊的概念）</p>
+<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>C语言规定，程序中各函数之间既允许直接递归调用也允许间接递归调用。</p>
+<h1 id="文件包含与工程文件"><a href="#文件包含与工程文件" class="headerlink" title="文件包含与工程文件"></a>文件包含与工程文件</h1><p>放一道题：</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c">在Dev-C++中创建工程P1，增加main函数所在的project.c，该工程需要使用libgraphics的linkedlist类库，关于linkedlist使用说明正确的有（ ）。	ADF<br>    <br>A.通过文件包含将project.c和linkedlist.c连接成一个完整的可执行程序时，可以在project.c中<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;linkedlist.c&quot;</span></span><br>B.通过文件包含将project.c和linkedlist.c连接成一个完整的可执行程序时，可以在project.c中<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;linkedlist.c&quot;</span>，同时工程P1增加linkedlist.h和linkedlist.c</span><br>C.通过工程文件将project.c和linkedlist.c连接成一个完整的可执行程序时，可以在project.c中<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;linkedlist.h&quot;</span></span><br>D.通过工程文件将project.c和linkedlist.c连接成一个完整的可执行程序时，可以在project.c中<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;linkedlist.h&quot;</span>，同时工程P1增加linkedlist.h和linkedlist.c</span><br>E.通过文件包含将project.c和linkedlist.c连接成一个完整的可执行程序时，编译生成project.o和linkedlist.o，连接生成P1.exe<br>F.通过工程文件将project.c和linkedlist.c连接成一个完整的可执行程序时，编译生成project.o和linkedlist.o，连接生成P1.exe<br><br>B.重复包含<br></code></pre></div></td></tr></table></figure>
+
+<p>文件包含最终是单文件编译，相当于直接把包含的文件代码复制过来</p>
+<p>而工程文件是需要编译连接</p>
+<h1 id="有的没的函数"><a href="#有的没的函数" class="headerlink" title="有的没的函数"></a>有的没的函数</h1><h2 id="qsort"><a href="#qsort" class="headerlink" title="qsort"></a>qsort</h2><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">qsort</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *base, <span class="hljs-keyword">size_t</span> nitems, <span class="hljs-keyword">size_t</span> size, <span class="hljs-keyword">int</span> (*compar)(<span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *, <span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span>*))</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li> <strong>base</strong>  – 指向要排序的数组的第一个元素的指针。</li>
+<li> <strong>nitems</strong>  – 由 base 指向的数组中元素的个数。</li>
+<li> <strong>size</strong>  – 数组中每个元素的大小，以字节为单位。</li>
+<li> <strong>compar</strong>  – 用来比较两个元素的函数。</li>
+</ul>
+<h2 id="sprintf"><a href="#sprintf" class="headerlink" title="sprintf"></a>sprintf</h2><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sprintf</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *str, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *format, ...)</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>函数格式化输出成功，返回输出的字符数，<strong>不</strong>包括字符串结束符<code>&#39;\0&#39;</code>，失败则返回一个负整数</p>
+<p>形参str是指向输出缓冲区的指针，函数结束后，格式化的输出结果在缓冲区中，形参format的使用用法与函数printf的形参format相同</p>
+<h2 id="sscanf"><a href="#sscanf" class="headerlink" title="sscanf"></a>sscanf</h2><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sscanf</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *str, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *format, ...)</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>形参s指定从中读取数据的字符串，形参format格式字符串，指定了输入的格式，并按照格式说明符解析输入对应位置的信息，并存储于可变参数列表中对应的指针所指位置，使用格式控制字符%n可以获取输入数据所消耗的字符数</p>
+<p>格式化读取成功，返回读取的数据的个数（不包括%n哦），返回值为0表示没有将任何字段赋值，如果读入数据时遇到了“字符串结束”则返回EOF</p>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-keyword">char</span> buffer[] = <span class="hljs-string">&quot;abc 5 6.7 cde&quot;</span>;<br><span class="hljs-keyword">int</span> a, m, n;<br><span class="hljs-keyword">char</span> str[<span class="hljs-number">4</span>];<br>n = <span class="hljs-built_in">sscanf</span>(buffer, <span class="hljs-string">&quot;%s %d%n&quot;</span>, str, &amp;a, &amp;m);<br><br><span class="hljs-comment">// m = 5, n = 2</span><br></code></pre></div></td></tr></table></figure>
+
+<h2 id="一些已知宏"><a href="#一些已知宏" class="headerlink" title="一些已知宏"></a>一些已知宏</h2><p>NULL 0</p>
+<p>EOF -1</p>
+<h1 id="奇奇怪怪的东西"><a href="#奇奇怪怪的东西" class="headerlink" title="奇奇怪怪的东西"></a>奇奇怪怪的东西</h1><ul>
+<li><p>正确：一般不能用任何一个文本编辑器打开二进制文件进行阅读。  </p>
+</li>
+<li><p>malloc内存分配时记得强制转换  理论题里认为需要强制转换（虽然C语言允许省略 但C++不大行</p>
+</li>
+</ul>
+<h2 id="register变量"><a href="#register变量" class="headerlink" title="register变量"></a>register变量</h2><p>寄存器变量，其存储于寄存器，速度更快。</p>
+<blockquote>
+<p> 只有局部变量和形式参数才能定义为寄存器变量。</p>
+<p>局部静态变量不能定义为寄存器变量，因为一个变量只能声明为一种存储类别。</p>
+<p>寄存器的长度一般和机器的字长一致，所以，只有较短的类型如int、char、short等才适合定义为寄存器变量，诸如double等较大的类型，不推荐将其定义为寄存器类型。</p>
+<p>CPU的寄存器数目有限，因此，即使定义了寄存器变量，编译器可能并不真正为其分配寄存器，而是将其当做普通的auto变量来对待，为其分配栈内存。当然，有些优秀的编译器，能自动识别使用频繁的变量，如循环控制变量等，在有可用的寄存器时，即使没有使用 register 关键字，也自动为其分配寄存器，无须由程序员来指定。</p>
+</blockquote>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>后面的函数相关笔记来自<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-tutorial.html">菜鸟教程</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/Camel_Blog/tags/c/">c</a>
+                    
+                      <a class="hover-with-bg" href="/Camel_Blog/tags/note/">note</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Camel_Blog/2022/04/23/CMake%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CMake的使用基础</span>
+                        <span class="visible-mobile">Vorheriger</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Camel_Blog/2022/02/05/%E6%96%B0%E8%A3%85Ubuntu%E5%90%8E%E6%97%A0Wi-Fi%E5%9B%BE%E6%A0%87/">
+                        <span class="hidden-mobile">新装Ubuntu后无Wi-Fi图标</span>
+                        <span class="visible-mobile">Nächster</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">Stichwort</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/Camel_Blog/js/events.js" ></script>
+<script  src="/Camel_Blog/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/Camel_Blog/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/Camel_Blog/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?05ef824f06a797263b288fb0a8a025e2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/Camel_Blog/js/boot.js" ></script>
+
+
+</body>
+</html>

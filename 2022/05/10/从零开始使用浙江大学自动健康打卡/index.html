@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+<html lang="zh" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/Camel_Blog/img/favicon.png">
+  <link rel="icon" href="/Camel_Blog/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Camel">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="由于目前一天不打卡就会被取消蓝码，所以大家对自动打卡的需求也就越来越高。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零开始使用浙江大学自动健康打卡">
+<meta property="og:url" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/index.html">
+<meta property="og:site_name" content="Camel&#39;s Blog">
+<meta property="og:description" content="由于目前一天不打卡就会被取消蓝码，所以大家对自动打卡的需求也就越来越高。">
+<meta property="og:locale">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/signup.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/fork.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/createfork.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/afterfork.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/dinggroup.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/dingaddbot.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/customedbot.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/createbot.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/finishbot.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/settings.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/newsecret.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/addsecret.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/githubcode.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/schedule.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/ymlpen.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/commit.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/actions.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/enableworkflow.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/star.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/running.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/merge.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/updated.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/fail.png">
+<meta property="og:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/rerun.png">
+<meta property="article:published_time" content="2022-05-10T13:29:31.000Z">
+<meta property="article:modified_time" content="2022-05-11T14:44:29.160Z">
+<meta property="article:author" content="Camel">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="script">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://camel-zy.github.io/Camel_Blog/2022/05/10/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/signup.png">
+  
+  
+  <title>从零开始使用浙江大学自动健康打卡 - Camel&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/Camel_Blog/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"camel-zy.github.io","root":"/Camel_Blog/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"05ef824f06a797263b288fb0a8a025e2","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Camel_Blog/local-search.xml"};
+  </script>
+  <script  src="/Camel_Blog/js/utils.js" ></script>
+  <script  src="/Camel_Blog/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/Camel_Blog/">
+      <strong>Camel&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Camel_Blog/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/Camel_Blog/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="从零开始使用浙江大学自动健康打卡">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-10 21:29" pubdate>
+        May 10, 2022 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">从零开始使用浙江大学自动健康打卡</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：May 11, 2022 pm
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>由于目前一天不打卡就会被取消蓝码，所以大家对自动打卡的需求也就越来越高。</p>
+<span id="more"></span>
+<p>为节约每天重复的打卡时间，也尽可能避免忘记打卡造成的麻烦，自动打卡应运而生。</p>
+<p>为了降低自动打卡的使用门槛，所以就有了这份胎教级教程，从零开始实现自动健康打卡。</p>
+<p>顺带一提，目前github上的自动打卡在众多开发者的努力下功能已较为完善，稳定性也比最初提升了不少。</p>
+<h1 id="〇、特别声明"><a href="#〇、特别声明" class="headerlink" title="〇、特别声明"></a>〇、特别声明</h1><p><strong>本文禁止任何形式的转载。</strong></p>
+<p>本文仅用于学习交流使用，请严格遵守校纪校规，如实上报健康状态。对一切非法使用所产生的后果概不负责。</p>
+<p>若本文侵犯到您的利益请联系我删除。</p>
+<h1 id="一、注册github"><a href="#一、注册github" class="headerlink" title="一、注册github"></a>一、注册github</h1><blockquote>
+<p>神说：要有github。</p>
+</blockquote>
+<p>作为世界上最大的<del>同性交友网站</del>代码托管平台，github上超2亿代码库。我目前是用的自动打卡也是来自于此。</p>
+<p>打开<a target="_blank" rel="noopener" href="https://github.com/">github</a>，点击右上角的Sign Up 根据提示完成注册即可。（国内访问github可能不稳定，若无法访问可以过一段时间再试。如果有魔法的话访问速度会快一点<img src="signup.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<h1 id="二、-Fork自动健康打卡仓库"><a href="#二、-Fork自动健康打卡仓库" class="headerlink" title="二、 Fork自动健康打卡仓库"></a>二、 Fork自动健康打卡仓库</h1><p>完成注册并登录后，打开<a target="_blank" rel="noopener" href="https://github.com/GCS-ZHN/AutoCard">自动健康打卡仓库</a>，我目前使用的就是这个AutoCard仓库。</p>
+<p>然后点击右上角的Fork，也就是将代码复制到自己的仓库。然后点击create fork</p>
+<p><img src="fork.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p><img src="createfork.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>页面跳转后，若红框处左上角为你的用户名，且下面有一行fork from什么的小字，则说明fork已完成。</p>
+<p><img src="afterfork.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<h1 id="三、钉钉推送"><a href="#三、钉钉推送" class="headerlink" title="三、钉钉推送"></a>三、钉钉推送</h1><p>因为自动打卡可能会失败，需要你每天关注一下有没有打卡成功，所以需要开个钉钉推送功能。</p>
+<p>首先随便新建个群，用于消息推送。</p>
+<p>然后在<strong>电脑端</strong>（你前面不会一直是在手机上操作的吧）打开钉钉的那个群，点右上角群设置-&gt;智能群助手-&gt;添加机器人-&gt;设置</p>
+<p><img src="dinggroup.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p><img src="dingaddbot.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>点击自定义-&gt;添加</p>
+<p><img src="customedbot.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>机器人名字可随便写，但注意<strong>勾选加签</strong>，并点击下面的复制按钮复制生成的密钥，找个地方记录下，等会要用</p>
+<p><img src="createbot.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>点击完成后，点击复制按钮复制生成的Webhook，找个地方记录下，等会要用</p>
+<p><img src="finishbot.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<h1 id="四、仓库设置"><a href="#四、仓库设置" class="headerlink" title="四、仓库设置"></a>四、仓库设置</h1><h2 id="添加Secrets"><a href="#添加Secrets" class="headerlink" title="添加Secrets"></a>添加Secrets</h2><p>回到刚才你的仓库，点击Settings-&gt;Secrets&gt;Actions</p>
+<p><img src="settings.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>点击New repository secret</p>
+<p><img src="newsecret.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>Name中填写<strong>AUTOCARD_USER</strong> Value中填写你的浙大通行证账号 然后点击Add secret</p>
+<p><img src="addsecret.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>重复上述两步操作继续添加secret 其中Name和Value参照以下表格</p>
+<p>那个<strong>AUTOCARD_CACHE_FLAG</strong>的Value填<code>1</code>即可</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>AUTOCARD_USER</strong></td>
+<td>浙大通行证账号</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>AUTOCARD_PWD</strong></td>
+<td>浙大通行证密码</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>AUTOCARD_DINGTALK_URL</strong></td>
+<td>第三步中记录的Webhook</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>AUTOCARD_DINGTALK_SECRET</strong></td>
+<td>第三步中记录的密钥</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>AUTOCARD_CACHE_FLAG</strong></td>
+<td><code>1</code></td>
+<td>用于程序缓存输出提供一个索引，任意值即可</td>
+</tr>
+<tr>
+<td><strong>AUTOCARD_MAX_TRIAL</strong></td>
+<td><code>5</code></td>
+<td>打卡失败后重试次数</td>
+</tr>
+<tr>
+<td><strong>AUTOCARD_DELAY</strong></td>
+<td><code>0</code></td>
+<td>是否随机延迟打卡</td>
+</tr>
+</tbody></table>
+<h2 id="可选项：打卡时间修改"><a href="#可选项：打卡时间修改" class="headerlink" title="可选项：打卡时间修改"></a>可选项：打卡时间修改</h2><p>回到code页面，点击红框中的workflow</p>
+<p><img src="githubcode.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>点击schedule.yml</p>
+<p><img src="schedule.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>点击右侧的笔</p>
+<p><img src="ymlpen.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>修改此处的cron即可修改每日打卡的时间，例如我将这个改为了<code>- cron: &#39;20 16,0  * * *&#39;</code>，即协调世界时的每天16:20和00:20尝试打卡一次。（每天打两次是双保险，自动打卡有可能会失败） 具体cron语法可以自行查询</p>
+<p>修改完后点击Start commit -&gt; Commit changes 即可</p>
+<p>修改完后点击Start commit -&gt; Commit changes 即可</p>
+<p><img src="commit.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<h2 id="启动Actions"><a href="#启动Actions" class="headerlink" title="启动Actions"></a>启动Actions</h2><p>点击上方Actions，并点击绿框启用Actions</p>
+<p><img src="actions.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>点击左边的schedule 再点击右边的enable workflow</p>
+<p><img src="enableworkflow.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>此时已完成设置。</p>
+<h2 id="测试一下下"><a href="#测试一下下" class="headerlink" title="测试一下下"></a>测试一下下</h2><p>看到仓库右上角的小星星没</p>
+<p><img src="star.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>下面要跟着做呦</p>
+<p>点一下这个小星星，它会变亮。</p>
+<p>再点一下，它就灭了。</p>
+<p><del>这真的不是单纯为了逗你玩 其实是为了让Action跑一遍</del></p>
+<p>这边这个黄圈就意味着已经在运行啦</p>
+<p><img src="running.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>稍等一会，这个东西可能有点慢。</p>
+<p>过一段时间看看钉钉刚才那个群里有没有收到消息推送。</p>
+<p>okk如果一切顺利的话应该就已经完成设置啦，记得每天看一下有没有打卡成功就行啦。</p>
+<h1 id="五、部分问题处理"><a href="#五、部分问题处理" class="headerlink" title="五、部分问题处理"></a>五、部分问题处理</h1><p>如果不熟悉上述的这些东西的话，自动打卡出问题时可能处理起来也会比较困难。</p>
+<p>那遇到问题怎么办呢？</p>
+<p><del>自己看着办咯</del></p>
+<p>可以康康下面的常见问题。</p>
+<h2 id="代码库需要更新"><a href="#代码库需要更新" class="headerlink" title="代码库需要更新"></a>代码库需要更新</h2><p>这个自动健康打卡的库有大佬在维护，时不时可能会需要更新。</p>
+<p>辣么如何更新呢？</p>
+<p>进入你的仓库Code页面 点击Fetch upstream。如果显示如下图的话就需要更新。</p>
+<p><img src="merge.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>点击Fetch and merge 大概还需要再点个绿框 这样就可以啦。</p>
+<p>无需更新的话是如下图所示。</p>
+<p><img src="updated.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<h2 id="打卡失败-如何重新启动脚本？"><a href="#打卡失败-如何重新启动脚本？" class="headerlink" title="打卡失败 如何重新启动脚本？"></a>打卡失败 如何重新启动脚本？</h2><p>一般来讲提示信息获取失败或者压根没推送信息那就说明自动打卡失败了。</p>
+<p>进入你的仓库Actions界面 点击红框中的schedule</p>
+<p><img src="fail.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>再点击Re-run all jobs -&gt; Re-run jobs</p>
+<p><img src="rerun.png" srcset="/Camel_Blog/img/loading.gif" lazyload></p>
+<p>即可重新运行一次。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/Camel_Blog/tags/github/">github</a>
+                    
+                      <a class="hover-with-bg" href="/Camel_Blog/tags/script/">script</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Camel_Blog/2022/05/12/sqlmap%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">sqlmap使用笔记</span>
+                        <span class="visible-mobile">Vorheriger</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Camel_Blog/2022/04/25/%E5%9C%A8%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%85%B1%E4%BA%AB%E8%93%9D%E7%89%99%E9%BC%A0%E6%A0%87/">
+                        <span class="hidden-mobile">在双系统中共享蓝牙</span>
+                        <span class="visible-mobile">Nächster</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">Stichwort</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/Camel_Blog/js/events.js" ></script>
+<script  src="/Camel_Blog/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/Camel_Blog/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/Camel_Blog/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?05ef824f06a797263b288fb0a8a025e2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/Camel_Blog/js/boot.js" ></script>
+
+
+</body>
+</html>
