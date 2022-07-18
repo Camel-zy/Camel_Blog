@@ -18,19 +18,19 @@
   
     <meta name="description" content="之前源文件被我改得乱七八糟，现在重新恢复为官方源文件，顺便做个备份。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu源文件备份">
-<meta property="og:url" content="https://camel-zy.github.io/Camel_Blog/2022/07/16/Ubuntu%E6%BA%90%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD/index.html">
+<meta property="og:title" content="Ubuntu软件源">
+<meta property="og:url" content="https://camel-zy.github.io/Camel_Blog/2022/07/16/Ubuntu%E8%BD%AF%E4%BB%B6%E6%BA%90/index.html">
 <meta property="og:site_name" content="Camel&#39;s Blog">
 <meta property="og:description" content="之前源文件被我改得乱七八糟，现在重新恢复为官方源文件，顺便做个备份。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-07-16T08:15:42.000Z">
-<meta property="article:modified_time" content="2022-07-16T08:16:42.899Z">
+<meta property="article:modified_time" content="2022-07-18T10:28:05.567Z">
 <meta property="article:author" content="Camel">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>Ubuntu源文件备份 - Camel&#39;s Blog</title>
+  <title>Ubuntu软件源 - Camel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -188,7 +188,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Ubuntu源文件备份">
+            <span class="h2" id="subtitle" title="Ubuntu软件源">
               
             </span>
 
@@ -209,7 +209,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3k 字
+      3.1k 字
     </span>
   
 
@@ -218,7 +218,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      17 分钟
+      18 分钟
     </span>
   
 
@@ -255,11 +255,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Ubuntu源文件备份</h1>
+            <h1 style="display: none">Ubuntu软件源</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：July 16, 2022 pm
+                  本文最后更新于：July 18, 2022 pm
                 
               </p>
             
@@ -267,13 +267,14 @@
               <p>之前源文件被我改得乱七八糟，现在重新恢复为官方源文件，顺便做个备份。</p>
 <span id="more"></span>
 
+<p>软件源文件位置：<code>/etc/apt/sources.list</code></p>
 <p>官方源文件备份</p>
 <figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-comment">#deb cdrom:[Ubuntu 20.04 LTS _Focal Fossa_ - Release amd64 (20200423)]/ focal main restricted</span><br><br><span class="hljs-comment"># See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to</span><br><span class="hljs-comment"># newer versions of the distribution.</span><br>deb http:<span class="hljs-regexp">//</span>cn.archive.ubuntu.com<span class="hljs-regexp">/ubuntu/</span> focal main restricted<br><span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal main restricted</span><br><br><span class="hljs-comment">## Major bug fix updates produced after the final release of the</span><br><span class="hljs-comment">## distribution.</span><br>deb http:<span class="hljs-regexp">//</span>cn.archive.ubuntu.com<span class="hljs-regexp">/ubuntu/</span> focal-updates main restricted<br><span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal-updates main restricted</span><br><br><span class="hljs-comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu</span><br><span class="hljs-comment">## team. Also, please note that software in universe WILL NOT receive any</span><br><span class="hljs-comment">## review or updates from the Ubuntu security team.</span><br>deb http:<span class="hljs-regexp">//</span>cn.archive.ubuntu.com<span class="hljs-regexp">/ubuntu/</span> focal universe<br><span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal universe</span><br>deb http:<span class="hljs-regexp">//</span>cn.archive.ubuntu.com<span class="hljs-regexp">/ubuntu/</span> focal-updates universe<br><span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal-updates universe</span><br><br><span class="hljs-comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu </span><br><span class="hljs-comment">## team, and may not be under a free licence. Please satisfy yourself as to </span><br><span class="hljs-comment">## your rights to use the software. Also, please note that software in </span><br><span class="hljs-comment">## multiverse WILL NOT receive any review or updates from the Ubuntu</span><br><span class="hljs-comment">## security team.</span><br>deb http:<span class="hljs-regexp">//</span>cn.archive.ubuntu.com<span class="hljs-regexp">/ubuntu/</span> focal multiverse<br><span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal multiverse</span><br>deb http:<span class="hljs-regexp">//</span>cn.archive.ubuntu.com<span class="hljs-regexp">/ubuntu/</span> focal-updates multiverse<br><span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal-updates multiverse</span><br><br><span class="hljs-comment">## N.B. software from this repository may not have been tested as</span><br><span class="hljs-comment">## extensively as that contained in the main release, although it includes</span><br><span class="hljs-comment">## newer versions of some applications which may provide useful features.</span><br><span class="hljs-comment">## Also, please note that software in backports WILL NOT receive any review</span><br><span class="hljs-comment">## or updates from the Ubuntu security team.</span><br>deb http:<span class="hljs-regexp">//</span>cn.archive.ubuntu.com<span class="hljs-regexp">/ubuntu/</span> focal-backports main restricted universe multiverse<br><span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><br><span class="hljs-comment">## Uncomment the following two lines to add software from Canonical&#x27;s</span><br><span class="hljs-comment">## &#x27;partner&#x27; repository.</span><br><span class="hljs-comment">## This software is not part of Ubuntu, but is offered by Canonical and the</span><br><span class="hljs-comment">## respective vendors as a service to Ubuntu users.</span><br><span class="hljs-comment"># deb http://archive.canonical.com/ubuntu focal partner</span><br><span class="hljs-comment"># deb-src http://archive.canonical.com/ubuntu focal partner</span><br><br>deb http:<span class="hljs-regexp">//</span>security.ubuntu.com/ubuntu focal-security main restricted<br><span class="hljs-comment"># deb-src http://security.ubuntu.com/ubuntu focal-security main restricted</span><br>deb http:<span class="hljs-regexp">//</span>security.ubuntu.com/ubuntu focal-security universe<br><span class="hljs-comment"># deb-src http://security.ubuntu.com/ubuntu focal-security universe</span><br>deb http:<span class="hljs-regexp">//</span>security.ubuntu.com/ubuntu focal-security multiverse<br><span class="hljs-comment"># deb-src http://security.ubuntu.com/ubuntu focal-security multiverse</span><br><br><span class="hljs-comment"># This system was installed using small removable media</span><br><span class="hljs-comment"># (e.g. netinst, live or single CD). The matching &quot;deb cdrom&quot;</span><br><span class="hljs-comment"># entries were disabled at the end of the installation process.</span><br><span class="hljs-comment"># For information about how to configure apt package sources,</span><br><span class="hljs-comment"># see the sources.list(5) manual.</span><br></code></pre></div></td></tr></table></figure>
 
 <p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/mirror/ubuntu?spm=a2c6h.13651102.0.0.3e221b11MBcu4I">Ubuntu阿里云镜像</a></p>
 <p>只需将文件中<code>archive.ubuntu.com</code>替换为<code>mirrors.aliyun.com</code>即可。</p>
 <p>ps:使用<code>code sources.list</code>可在vscode中打开文件。</p>
-<p>替换为ZJU镜像同理。</p>
+<p>替换为ZJU镜像同理。<a target="_blank" rel="noopener" href="http://mirrors.zju.edu.cn/">http://mirrors.zju.edu.cn/</a></p>
 
             </div>
             <hr>
