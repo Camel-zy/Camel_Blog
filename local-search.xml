@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Ubuntu设置充电上限</title>
+    <link href="/Camel_Blog/2022/07/18/Ubuntu%E8%AE%BE%E7%BD%AE%E5%85%85%E7%94%B5%E4%B8%8A%E9%99%90/"/>
+    <url>/Camel_Blog/2022/07/18/Ubuntu%E8%AE%BE%E7%BD%AE%E5%85%85%E7%94%B5%E4%B8%8A%E9%99%90/</url>
+    
+    <content type="html"><![CDATA[<p>在Windows下，天选2可以直接在华硕服务中设置充电上限，所以在ubuntu下也有了这个需求。</p><span id="more"></span><p>在经历过一些失败后(包括但不限于使用TLP)，终于找到了限制充电上限的方法。</p><p>使用<a href="https://github.com/tshakalekholoane/bat">bat</a>就行啦</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>下载bat(二进制文件)后，进行安装</p><figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">sudo install bat <span class="hljs-regexp">/usr/</span>local/bin<br></code></pre></div></td></tr></table></figure><h1 id="查看阈值"><a href="#查看阈值" class="headerlink" title="查看阈值"></a>查看阈值</h1><figure class="highlight mipsasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mipsasm"><span class="hljs-keyword">bat </span>-t<br><span class="hljs-comment"># bat --threshold</span><br></code></pre></div></td></tr></table></figure><h1 id="设置阈值"><a href="#设置阈值" class="headerlink" title="设置阈值"></a>设置阈值</h1><figure class="highlight arduino"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arduino">sudo bat -t &lt;CHARGE_THRESHOULD&gt;<br><span class="hljs-meta"># sudo bat --threshold <span class="hljs-meta-string">&lt;CHARGE_THRESHOULD&gt;</span></span><br></code></pre></div></td></tr></table></figure><h1 id="永久修改"><a href="#永久修改" class="headerlink" title="永久修改"></a>永久修改</h1><p>默认状态下，设置后的阈值会在重启后失效，恢复默认状态。</p><p>使用以下指令可以永久修改阈值：</p><figure class="highlight mipsasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mipsasm">sudo <span class="hljs-keyword">bat </span>-p<br><span class="hljs-comment"># sudo bat --persist</span><br></code></pre></div></td></tr></table></figure><h1 id="重置阈值"><a href="#重置阈值" class="headerlink" title="重置阈值"></a>重置阈值</h1><figure class="highlight mipsasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mipsasm">sudo <span class="hljs-keyword">bat </span>-r<br><span class="hljs-comment"># bat --reset</span><br></code></pre></div></td></tr></table></figure><h1 id="查看当前电量"><a href="#查看当前电量" class="headerlink" title="查看当前电量"></a>查看当前电量</h1><figure class="highlight mipsasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mipsasm"><span class="hljs-keyword">bat </span>-c<br><span class="hljs-comment"># bat --capacity</span><br></code></pre></div></td></tr></table></figure><h1 id="查看充电状态"><a href="#查看充电状态" class="headerlink" title="查看充电状态"></a>查看充电状态</h1><figure class="highlight mipsasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mipsasm"><span class="hljs-keyword">bat </span>-s<br><span class="hljs-comment"># bat --status</span><br></code></pre></div></td></tr></table></figure><p>总的来说非常简单，具体原文可以看<a href="https://www.linuxuprising.com/2021/06/easily-set-charging-thresholds-for-asus.html">这里</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+      <tag>battery</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Gitee自动部署</title>
     <link href="/Camel_Blog/2022/07/16/Gitee%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/"/>
     <url>/Camel_Blog/2022/07/16/Gitee%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</url>
