@@ -313,7 +313,7 @@
     <link href="/Camel_Blog/2022/01/19/Ubuntu%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0/"/>
     <url>/Camel_Blog/2022/01/19/Ubuntu%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E7%9B%B8%E5%85%B3%E7%AC%94%E8%AE%B0/</url>
     
-    <content type="html"><![CDATA[<p>Ubuntu终端命令相关笔记</p><span id="more"></span><h1 id="系统相关"><a href="#系统相关" class="headerlink" title="系统相关"></a>系统相关</h1><h2 id="硬件架构"><a href="#硬件架构" class="headerlink" title="硬件架构"></a>硬件架构</h2><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">uname -a<br><br>arch<br>//x86_64<br></code></pre></div></td></tr></table></figure><p>(听说x86_64,x64,AMD64基本上是同一个东西)</p>]]></content>
+    <content type="html"><![CDATA[<p>Ubuntu终端命令相关笔记</p><span id="more"></span><h1 id="系统相关"><a href="#系统相关" class="headerlink" title="系统相关"></a>系统相关</h1><h2 id="硬件架构"><a href="#硬件架构" class="headerlink" title="硬件架构"></a>硬件架构</h2><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">uname -a<br><br>arch<br>//x86_64<br></code></pre></div></td></tr></table></figure>]]></content>
     
     
     
