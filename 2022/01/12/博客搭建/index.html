@@ -16,19 +16,19 @@
   <meta name="author" content="Camel">
   <meta name="keywords" content="">
   
-    <meta name="description" content="使用linux时发现乱七八糟的指令有点多，所以搞了个博客来记录一下下。">
+    <meta name="description" content="使用hexo搭建博客时发现乱七八糟的指令有点多，所以来记录一下下。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客搭建">
 <meta property="og:url" content="https://camel-zy.github.io/Camel_Blog/2022/01/12/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Camel&#39;s Blog">
-<meta property="og:description" content="使用linux时发现乱七八糟的指令有点多，所以搞了个博客来记录一下下。">
+<meta property="og:description" content="使用hexo搭建博客时发现乱七八糟的指令有点多，所以来记录一下下。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-01-12T04:04:20.000Z">
-<meta property="article:modified_time" content="2022-01-26T03:48:57.313Z">
+<meta property="article:modified_time" content="2022-07-21T01:14:44.304Z">
 <meta property="article:author" content="Camel">
-<meta property="article:tag" content="blog">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="fluid">
+<meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -211,7 +211,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      968 字
+      1.5k 字
     </span>
   
 
@@ -220,7 +220,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6 分钟
+      9 分钟
     </span>
   
 
@@ -261,12 +261,12 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：January 26, 2022 am
+                  本文最后更新于：July 21, 2022 am
                 
               </p>
             
             <div class="markdown-body">
-              <p>使用linux时发现乱七八糟的指令有点多，所以搞了个博客来记录一下下。 </p>
+              <p>使用hexo搭建博客时发现乱七八糟的指令有点多，所以来记录一下下。 </p>
 <span id="more"></span>
 
 <h1 id="相关软件安装"><a href="#相关软件安装" class="headerlink" title="相关软件安装"></a>相关软件安装</h1><p>添加nodejs源 </p>
@@ -313,6 +313,20 @@
 <p>写博客时只需根据markdown语法<code>![title](xxx.png)</code>即可</p>
 <p><a target="_blank" rel="noopener" href="https://moeci.com/posts/hexo-typora/">参考博客</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/yiyungent/hexo-asset-img">github地址</a></p>
+<h1 id="生成博客时仓库内包含其他文件-如Readme-md等"><a href="#生成博客时仓库内包含其他文件-如Readme-md等" class="headerlink" title="生成博客时仓库内包含其他文件(如Readme.md等)"></a>生成博客时仓库内包含其他文件(如Readme.md等)</h1><p>我希望hexo在生成时将readme.md workflows之类的文件加上一起部署到仓库，所以就有了这个需求。</p>
+<p>首先在_config.yml文件的<code>include: </code>中加上所需要包含的文件(根目录为source/)，此处支持<a target="_blank" rel="noopener" href="https://github.com/micromatch/micromatch#extended-globbing">通配符</a></p>
+<p>例如：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">include:</span> <br>  - <span class="hljs-string">&quot;.github/workflows/*&quot;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>然后如果不希望文件在生成时被自动转换的话，可以在<code>skip_render: </code>中加上路径，此处支持<a target="_blank" rel="noopener" href="https://github.com/micromatch/micromatch#extended-globbing">通配符</a></p>
+<p>此处添加的文件将会被直接复制到生成后的文件夹(public)中。例如：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">skip_render:</span> <br>  - <span class="hljs-string">&quot;.github/workflows/*&quot;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>然鹅在配完上述内容后，<code>hexo generate</code>生成的<code>public</code>文件夹中确实有了文件，但是使用<code>hexo deploy</code>时我放的<code>.github</code>文件夹又消失了。</p>
+<p>所以后来又去看了下<code>hexo-deploy-git</code>的<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git">配置说明</a></p>
+<p>如果需要上传隐藏文件的话 需要在<code>_config.yml</code>中的<code>deploy</code>部分添加<code>ignore_hidden: false</code>配置</p>
+<p>然后就搞定了</p>
+<p>_config.yml文件配置详细内容可以看<a target="_blank" rel="noopener" href="https://hexo.io/docs/configuration">官网</a></p>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://kaiter-plus.gitee.io/2020/03/07/How_To_Freely_Build_Blog/">搭建博客</a> </p>
 <p><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">fluid主题</a> </p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_49270402/article/details/117672195">主题配置</a> </p>
@@ -326,11 +340,11 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/Camel_Blog/tags/blog/">blog</a>
-                    
                       <a class="hover-with-bg" href="/Camel_Blog/tags/hexo/">hexo</a>
                     
                       <a class="hover-with-bg" href="/Camel_Blog/tags/fluid/">fluid</a>
+                    
+                      <a class="hover-with-bg" href="/Camel_Blog/tags/blog/">blog</a>
                     
                   </div>
                 
@@ -350,7 +364,7 @@
                       <a href="/Camel_Blog/2022/01/14/%E7%BE%8E%E5%8C%96Ubuntu/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">美化Ubuntu</span>
-                        <span class="visible-mobile">Vorheriger</span>
+                        <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
@@ -359,7 +373,7 @@
                     
                       <a href="/Camel_Blog/2022/01/07/C%E5%B0%8F%E7%A8%8B%E9%94%99%E9%A2%98%E6%95%B4%E7%90%86/">
                         <span class="hidden-mobile">C小程错题整理</span>
-                        <span class="visible-mobile">Nächster</span>
+                        <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -402,7 +416,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -411,7 +425,7 @@
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
           <label data-error="x" data-success="v"
-                 for="local-search-input">Stichwort</label>
+                 for="local-search-input">keyword</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
